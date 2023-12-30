@@ -17,3 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/user/{id?}/{name?}', function ($userId=1, $userName='Puja') {
+    #return 'User Id is '.$userId.'. User name is '.$userName;
+    return view('user.index',[
+        'Id'=>$userId,
+        'Name'=> $userName,
+    ]);
+ });

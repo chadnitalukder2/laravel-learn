@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class GreetingController extends Controller
 {
-    public function showMessage($greeting, )
+    public function showMessage($greeting )
     {
         return view('greeting',[
             'greet'=> $greeting,

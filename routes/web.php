@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GreetingController;
+use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\PostController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::resource('photos', PhotoController::class);
 
 Route::get('/', function () {
     return view('welcome');
