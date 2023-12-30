@@ -18,13 +18,17 @@ Route::get('/', function () {
 });
 
 Route::get('/greeting', function () {
-    return 'Hello World';
+    return view('greeting');
 });
 
-Route::get('/user/{id}', function ($userId) {
-    return 'User Id is'.$userId;
-});
+/* Route::get('/user/{id}', function ($userId) {
+   return 'User Id is'.$userId;
+});*/
 
 Route::get('/user/{id?}/{name?}', function ($userId=1, $userName='Puja') {
-    return 'User Id is '.$userId.'. User name is '.$userName;
+   #return 'User Id is '.$userId.'. User name is '.$userName;
+   return view('user.index',[
+       'Id'=>$userId,
+       'Name'=> $userName,
+   ]);
 });
