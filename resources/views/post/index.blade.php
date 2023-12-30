@@ -7,7 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Greetings</h1>
-    <p>Hello {{ $greet }}.</p>
+    <p>I am from Post view through controller</p>
 </body>
 </html>
