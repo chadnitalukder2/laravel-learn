@@ -1,8 +1,10 @@
 <?php
 
+
 use App\Http\Controllers\GreetingController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::get('students', StudentController::class);
 
 Route::resource('photos', PhotoController::class);
 
@@ -30,7 +34,7 @@ Route::get('/greeting', function () {
    return 'User Id is'.$userId;
 });*/
 
-Route::get('/user/{id?}/{name?}', function ($userId=1, $userName='Puja') {
+Route::get('/user/{id?}/{name?}', function ($userId=1, $userName=null) {
    #return 'User Id is '.$userId.'. User name is '.$userName;
    return view('user.index',[
        'Id'=>$userId,
